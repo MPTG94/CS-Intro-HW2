@@ -29,7 +29,7 @@ int main()
     char enemy_letter, previous_letter = 'Z';
 
     print_welcome_message();
-    scanf("%c", &enemy_letter);
+    scanf(" %c", &enemy_letter);
     // Looping over input enemy letters until input ending char has been
     // provided.
     while(enemy_letter != INPUT_ENDING_CHAR)
@@ -68,9 +68,9 @@ will be printed.
 bool print_dragon(bool dragon_c_cond, bool dragon_b_cond, bool dragon_a_cond)
 {
     return !((dragon_c_cond && print_dragonX_sent('C')) ||
-    (dragon_b_cond && print_dragonX_sent('B')) ||
-    (dragon_a_cond && print_dragonX_sent('A')) ||
-    (print_no_dragon()));
+             (dragon_b_cond && print_dragonX_sent('B')) ||
+             (dragon_a_cond && print_dragonX_sent('A')) ||
+             (print_no_dragon()));
 }
 
 int print_welcome_message()
