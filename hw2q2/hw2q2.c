@@ -36,11 +36,13 @@ int main()
     int num_loops = 0;
     // Creating counter array for the different letters of the ABC, regardless
     // of uppercase or lowercase letter.
-    int letter_arr[LETTER_COUNTER_ARR_LENGTH] = {};
+    int letter_arr[LETTER_COUNTER_ARR_LENGTH] = {0};
     char input_letter;
     bool can_repeat = true;
+
     print_welcome_message();
     scanf(" %c", &input_letter);
+
     while(input_letter != INPUT_ENDING_CHAR)
     {
         // Counting the number of times every letter appeared in the expression
