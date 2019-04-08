@@ -10,12 +10,12 @@
   Constants and definitions:
 ==========================================================================*/
 
-/* put your #defines and typedefs here*/
-bool print_correct_dragon(bool dragon_c_conditions, bool dragon_b_conditions, bool dragon_a_conditions);
+bool print_dragon(bool dragon_c_cond, bool dragon_b_cond, bool dragon_a_cond);
 int print_welcome_message();
 int print_dragonX_sent(char c);
 int print_no_dragon();
 
+// Constant to check that the input ending char has been provided.
 #define INPUT_ENDING_CHAR '!'
 
 /*-------------------------------------------------------------------------
@@ -25,35 +25,52 @@ int print_no_dragon();
 int main()
 {
     int ascii_sum = 0, num_of_letters = 0;
-    bool is_rising_series = true, contains_letter_s  = false, dragon_a_conditions = false, dragon_b_conditions = false, dragon_c_conditions = false;
+    bool is_rising = true, contains_letter_s  = false;
     char enemy_letter, previous_letter = 'Z';
 
     print_welcome_message();
     scanf("%c", &enemy_letter);
+    // Looping over input enemy letters until input ending char has been
+    // provided.
     while(enemy_letter != INPUT_ENDING_CHAR)
     {
+        // Adding the ASCII value of the letter to the sum.
         ascii_sum += enemy_letter;
+        // Checking if the input letter is 's'.
         contains_letter_s = (contains_letter_s || enemy_letter == 's');
-        is_rising_series = (previous_letter < enemy_letter && is_rising_series);
+        // Checking if the new input letter value is larger than the previous
+        // and also comparing to the result of previous checks.
+        is_rising = (previous_letter < enemy_letter && is_rising);
+        // Saving the input letter for comparison.
         previous_letter = enemy_letter;
+        // Increasing the total letters counter.
         num_of_letters++;
+        // Receiving a new letter as input.
         scanf("%c", &enemy_letter);
     }
 
-    dragon_c_conditions = (!contains_letter_s && num_of_letters < 6);
-    dragon_b_conditions = is_rising_series;
-    dragon_a_conditions = (ascii_sum % 5 != 0 && num_of_letters > 4);
+    // Checking which dragon conditions were met and setting booleans
+    // accordingly.
+    bool dragon_c_cond = (!contains_letter_s && num_of_letters < 6);
+    bool dragon_b_cond = is_rising;
+    bool dragon_a_cond = (ascii_sum % 5 != 0 && num_of_letters > 4);
 
-    print_correct_dragon(dragon_c_conditions, dragon_b_conditions, dragon_a_conditions);
-    return 0;
+    // Printing the correct dragon.
+    return print_dragon(dragon_c_cond, dragon_b_cond, dragon_a_cond);
 }
 
-bool print_correct_dragon(bool dragon_c_conditions, bool dragon_b_conditions, bool dragon_a_conditions)
+/*
+This function receives the boolean result of every dragon printing
+conditions and prints the correct dragon.
+If multiple dragons conditions are met, the first dragon in lexical order
+will be printed.
+*/
+bool print_dragon(bool dragon_c_cond, bool dragon_b_cond, bool dragon_a_cond)
 {
-    return (dragon_c_conditions && print_dragonX_sent('C')) ||
-    (dragon_b_conditions && print_dragonX_sent('B')) ||
-    (dragon_a_conditions && print_dragonX_sent('A')) ||
-    (print_no_dragon());
+    return !((dragon_c_cond && print_dragonX_sent('C')) ||
+    (dragon_b_cond && print_dragonX_sent('B')) ||
+    (dragon_a_cond && print_dragonX_sent('A')) ||
+    (print_no_dragon()));
 }
 
 int print_welcome_message()
