@@ -21,7 +21,10 @@ void print_field(char field[N][N], int len, int wid);
 
 
 /*-------------------------------------------------------------------------
-  The main program. (describe what your program does here)
+  This program takes as input the length and width of a battlefield, and
+  also the size of the army to be placed on the battlefield.
+  The program will check if the army is large enough and if so will
+  deploy it to the field according to the rule set.
  -------------------------------------------------------------------------*/
 int main()
 {
@@ -54,9 +57,9 @@ int main()
     {
         // Checking if the minimum number of soldiers needed for the field
         // is provided.
-        if (width/5 == 0 || width/5 == 1)
+        if (width / 5 == 0 || width / 5 == 1)
         {
-            if (1*length > num_of_soldiers)
+            if (1 * length > num_of_soldiers)
             {
                 print_not_enough();
                 return 0;
@@ -67,27 +70,13 @@ int main()
             print_not_enough();
             return 0;
         }
-        /*if (((width/ 5) + 1)*length >  num_of_soldiers)
-        {
-            print_not_enough();
-        }*/
-        //else
-        //{
-        // Placing a soldier in every first column and in every 5th following column.
+
         for(int i = 0; i < length; i++)
         {
             for(int j=0; j< width; j+=5)
             {
-                /*if (j==0)
-                {
-                    field[i][j] = 'x';
-                    num_of_soldiers--;
-                }
-                else if (j % 5 == 0)
-                {
-                    field[i][j] = 'x';
-                    num_of_soldiers--;
-                }*/
+                // Placing a soldier on the field, and lowering the total
+                // number of soldiers left to deploy.
                 field[i][j] = 'x';
                 num_of_soldiers--;
             }
@@ -103,6 +92,8 @@ int main()
                 {
                     if (field[i][j] == '_')
                     {
+                        // Placing a soldier on the field, and lowering the total
+                        // number of soldiers left to deploy.
                         field[i][j] = 'x';
                         num_of_soldiers--;
                     }
@@ -111,7 +102,6 @@ int main()
             }
         }
         print_field(field, length, width);
-        //}
     }
 
     return 0;
