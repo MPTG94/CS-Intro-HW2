@@ -49,14 +49,10 @@ int main()
         scanf("%c", &enemy_letter);
     }
 
-    // Checking which dragon conditions were met and setting booleans
-    // accordingly.
-    bool dragon_c_cond = (!contains_letter_s && num_of_letters < 6);
-    bool dragon_b_cond = is_rising;
-    bool dragon_a_cond = (ascii_sum % 5 != 0 && num_of_letters > 4);
-
+    // Checking which dragon conditions were met and sending to print function.
     // Printing the correct dragon.
-    return print_dragon(dragon_c_cond, dragon_b_cond, dragon_a_cond);
+    print_dragon((!contains_letter_s && num_of_letters < 6), is_rising, (ascii_sum % 5 != 0 && num_of_letters > 4));
+    return 0;
 }
 
 /*
