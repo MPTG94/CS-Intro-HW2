@@ -1,0 +1,7 @@
+Enter length and width of the battlefield:
+How many soldiers do you have?
+Your army's lineup:
+x _ _ _ _ x _ _ _ _ x _ _ _ _ x 
+x _ _ _ _ x _ _ _ _ x _ _ _ _ x 
+x _ _ _ _ x _ _ _ _ x _ _ _ _ x 
+x _ _ _ _ x _ _ _ _ x _ _ _ _ x 

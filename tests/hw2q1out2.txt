@@ -1,0 +1,3 @@
+Please enter enemy name:
+
+NO Dragon has been sent into the battle!!!

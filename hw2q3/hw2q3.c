@@ -53,11 +53,18 @@ int main()
     {
         print_too_many();
     }
-    else if (num_of_soldiers <= (length * width))
+    else
     {
         // Checking if the minimum number of soldiers needed for the field
         // is provided.
-        if (width / 5 == 0 || width / 5 == 1)
+        int num_needed_per_row = (((width - 1) / 5 ) + 1);
+        if (num_needed_per_row * length > num_of_soldiers)
+        {
+            print_not_enough();
+                return 0;
+        }
+
+        /*if (width / 5 == 0 || width / 5 == 1)
         {
             if (1 * length > num_of_soldiers)
             {
@@ -69,7 +76,7 @@ int main()
         {
             print_not_enough();
             return 0;
-        }
+        }*/
 
         for(int i = 0; i < length; i++)
         {

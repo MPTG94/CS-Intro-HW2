@@ -1,0 +1,4 @@
+Hello Netta, enter the letters you would like us to repeat ending with $:
+How many times would you like to loop?
+Enter the string you would like to be checked ending with $:
+Congratulations! you have enough letters to create your song and win the Eurovision!

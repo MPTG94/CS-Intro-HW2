@@ -1,0 +1,3 @@
+Enter length and width of the battlefield:
+How many soldiers do you have?
+You don't have enough soldiers.

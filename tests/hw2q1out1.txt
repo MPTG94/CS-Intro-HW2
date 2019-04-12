@@ -1,0 +1,3 @@
+Please enter enemy name:
+
+Khaleesi sent dragonC into the battle!!!
