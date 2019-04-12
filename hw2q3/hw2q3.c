@@ -64,20 +64,6 @@ int main()
                 return 0;
         }
 
-        /*if (width / 5 == 0 || width / 5 == 1)
-        {
-            if (1 * length > num_of_soldiers)
-            {
-                print_not_enough();
-                return 0;
-            }
-        }
-        else if (((width/5)+1)*length > num_of_soldiers)
-        {
-            print_not_enough();
-            return 0;
-        }*/
-
         for(int i = 0; i < length; i++)
         {
             for(int j=0; j< width; j+=5)
