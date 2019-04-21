@@ -1,0 +1,2 @@
+Hello Netta, enter the letters you would like us to repeat ending with $:
+How many times would you like to loop?

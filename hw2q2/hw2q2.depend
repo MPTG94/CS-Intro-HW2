@@ -1,6 +1,5 @@
 # depslib dependency file v1.0
-1554742085 source:c:\development\c\technion\csintro\hw2\hw2q2\hw2q2.c
+1555843024 source:c:\development\c\technion\csintro\hw2\hw2q2\hw2q2.c
 	<stdio.h>
-	<stdlib.h>
 	<stdbool.h>
 

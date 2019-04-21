@@ -3,7 +3,6 @@
 --------------------------------------------------------------------------*/
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdbool.h>
 
 
@@ -11,6 +10,7 @@
   Constants and definitions:
 ==========================================================================*/
 
+// Constant for the maximum size of the battlefield.
 #define N 1000
 
 void print_welcome_message();
@@ -33,12 +33,9 @@ int main()
     int num_of_soldiers = 0;
 
     print_welcome_message();
-    // Taking the size of the battlefield as input.
     scanf("%d%d", &length, &width);
 
     char field[N][N];
-
-    // Initializing array with all underscores.
     for(int i = 0; i < length; i++)
     {
         for(int j = 0; j < width; j++)
@@ -48,7 +45,6 @@ int main()
     }
 
     print_welcome_message2();
-    // Taking the number of soldiers as input.
     scanf("%d", &num_of_soldiers);
 
     if (length * width < num_of_soldiers)

@@ -56,7 +56,6 @@ int main()
         {
             letter_arr[input_letter-CHAR_A_VALUE]++;
         }
-        // Receiving a new letter as input.
         scanf(" %c", &input_letter);
     }
 

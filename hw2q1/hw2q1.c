@@ -20,6 +20,7 @@ int print_no_dragon();
 /*-------------------------------------------------------------------------
   This program takes the name of an enemy as input and prints the correct
   dragon to send to battle according to the name of the enemy.
+  length: 15 lines
  -------------------------------------------------------------------------*/
 int main()
 {
