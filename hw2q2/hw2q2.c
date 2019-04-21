@@ -3,7 +3,6 @@
 --------------------------------------------------------------------------*/
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdbool.h>
 
 /*=========================================================================
@@ -24,6 +23,8 @@ void print_fail();
 #define ASCII_LETTER_DISTANCE ('a'-'A')
 // The ASCII value of the char 'A'.
 #define CHAR_A_VALUE 'A'
+// The ASCII value of the char 'Z'.
+#define CHAR_Z_VALUE 'Z'
 
 /*-------------------------------------------------------------------------
   This program takes an expression to loop on, the number of times it can
@@ -47,7 +48,7 @@ int main()
     {
         // Counting the number of times every letter appeared in the expression
         // in either uppercase or lowercase version.
-        if (input_letter > 90)
+        if (input_letter > CHAR_Z_VALUE)
         {
             letter_arr[input_letter-ASCII_LETTER_DISTANCE-CHAR_A_VALUE]++;
         }
@@ -81,7 +82,7 @@ int main()
         // are used by the user.
         // If one of the letters was used more than is allowed, the final print
         // will be of a failure.
-        if (input_letter > 90)
+        if (input_letter > CHAR_Z_VALUE)
         {
             letter_arr[input_letter-ASCII_LETTER_DISTANCE-CHAR_A_VALUE]--;
             if (letter_arr[input_letter-ASCII_LETTER_DISTANCE-CHAR_A_VALUE] < 0)
@@ -94,7 +95,7 @@ int main()
             letter_arr[input_letter-CHAR_A_VALUE]--;
             if (letter_arr[input_letter-CHAR_A_VALUE] < 0)
             {
-                can_repeat = false;;
+                can_repeat = false;
             }
         }
         // Receiving a new letter as input.

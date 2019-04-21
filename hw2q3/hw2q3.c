@@ -33,6 +33,7 @@ int main()
     int num_of_soldiers = 0;
 
     print_welcome_message();
+    // Taking the size of the battlefield as input.
     scanf("%d%d", &length, &width);
 
     char field[N][N];
@@ -47,6 +48,7 @@ int main()
     }
 
     print_welcome_message2();
+    // Taking the number of soldiers as input.
     scanf("%d", &num_of_soldiers);
 
     if (length * width < num_of_soldiers)
@@ -77,7 +79,8 @@ int main()
 
         if (num_of_soldiers > 0)
         {
-            // There soldiers left to deploy, placing them in all available spots until they run out.
+            // There are soldiers left to deploy, placing them in all available
+            // spots until they run out.
             for(int i = 0; i < length; i++)
             {
                 int j = 0;
@@ -85,8 +88,8 @@ int main()
                 {
                     if (field[i][j] == '_')
                     {
-                        // Placing a soldier on the field, and lowering the total
-                        // number of soldiers left to deploy.
+                        // Placing a soldier on the field, and lowering the
+                        // total number of soldiers left to deploy.
                         field[i][j] = 'x';
                         num_of_soldiers--;
                     }
